@@ -1,5 +1,6 @@
 package com.example.todoapplication.services;
 
+import java.time.Instant;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -22,6 +23,16 @@ public class todoItemService {
     }
 
     public todoItem save(todoItem todoItem){
-    
+        if(todoItem.getId() == null){
+            todoItem.setCreatedAt(Instant.now());
+        }
+
+        todoItem.setUpdatedAt(Instant.now());
+
+        return todoItemRepository.save(todoItem);
+    }
+
+    public void delete(todoItem todoItem){
+        todoItemRepository.delete(todoItem);
     }
 }
