@@ -48,8 +48,16 @@
             <td th:text="${item.id}"></td>
             <td th:text="${item.description}"></td>
             <td>
-              <span th:if="${item.isComplete} == true" th:text="Yes" />
-              <span th:unless="${item.isComplete} == true" th:text="No" />
+              <span
+                class="text-success"
+                th:if="${item.isComplete} == true"
+                th:text="Yes"
+              />
+              <span
+                class="text-danger"
+                th:unless="${item.isComplete} == true"
+                th:text="No"
+              />
             </td>
             <td th:text="${item.createdAt}"></td>
             <td th:text="${item.updatedAt}"></td>
@@ -59,7 +67,7 @@
 
       <p>
         <a class="btn btn-outline-success" href="/create-todo">
-          <i class="bi bi-plus-square-fill"></i> Create a Todo</a
+          Create a Todo</a
         >
       </p>
     </div>
