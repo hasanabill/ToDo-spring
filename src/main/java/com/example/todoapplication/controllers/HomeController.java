@@ -5,13 +5,13 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.servlet.ModelAndView;
 
-import com.example.todoapplication.services.todoItemService;
+import com.example.todoapplication.services.TodoItemService;
 
 @Controller
 public class HomeController {
 
     @Autowired
-    private todoItemService todoItemService;
+    private TodoItemService todoItemService;
 
     @GetMapping("/")
     public ModelAndView index() {

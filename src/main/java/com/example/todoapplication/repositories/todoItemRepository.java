@@ -2,10 +2,10 @@ package com.example.todoapplication.repositories;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
-import com.example.todoapplication.models.todoItem;
+import com.example.todoapplication.models.TodoItem;
 
 @Repository
 
-public interface todoItemRepository extends JpaRepository<todoItem, Long> {
-    
+public interface TodoItemRepository extends JpaRepository<TodoItem, Long> {
+
 }

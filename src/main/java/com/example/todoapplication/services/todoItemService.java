@@ -6,33 +6,33 @@ import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.example.todoapplication.models.todoItem;
-import com.example.todoapplication.repositories.todoItemRepository;
+import com.example.todoapplication.models.TodoItem;
+import com.example.todoapplication.repositories.TodoItemRepository;
 
 @Service
-public class todoItemService {
+public class TodoItemService {
+
     @Autowired
-    private todoItemRepository todoItemRepository;
+    private TodoItemRepository todoItemRepository;
 
-    public Iterable<todoItem>getAll(){
-        return todoItemRepository.findAll();
-    }
-
-    public Optional<todoItem> getById(Long id){
+    public Optional<TodoItem> getById(Long id) {
         return todoItemRepository.findById(id);
     }
 
-    public todoItem save(todoItem todoItem){
-        if(todoItem.getId() == null){
+    public Iterable<TodoItem> getAll() {
+        return todoItemRepository.findAll();
+    }
+
+    public TodoItem save(TodoItem todoItem) {
+        if (todoItem.getId() == null) {
             todoItem.setCreatedAt(Instant.now());
         }
-
         todoItem.setUpdatedAt(Instant.now());
-
         return todoItemRepository.save(todoItem);
     }
 
-    public void delete(todoItem todoItem){
+    public void delete(TodoItem todoItem) {
         todoItemRepository.delete(todoItem);
     }
+
 }
