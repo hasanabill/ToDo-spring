@@ -25,7 +25,7 @@ This documentation provides information on the ToDo application built using Spri
 
 Before you begin, ensure you have the following installed:
 
-- Java Development Kit (JDK) 8 or higher
+- Java Development Kit (JDK) 17 or higher
 - Maven
 - Your favorite IDE (Integrated Development Environment)
 
